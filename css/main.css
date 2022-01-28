@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+* {margin:0; padding:0;}
+li {list-style: none;}
+a {
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+/* pc 초기화 : 모바일 , 태블릿 제거 */
+.mobile {display: none;}
+.xi-bars {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px; 
+}
+.xi-bars span, .xi-close span {
+    position: absolute;
+    left: -9999px;
+}
+
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+} 
+header a {color: #fff;}
+header .pc_header {
+    max-width: 1280px;
+    width: calc(100% - 30px);
+    height: 100px;
+    margin: 0 auto; 
+    position: relative;
+    z-index: 9;
+}
+header .pc_header h1 {
+    width: 135px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);  
+    z-index: 99;
+}
+header .pc > ul {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+header .pc ul .depth01 {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 100px; 
+    position: relative;
+}
+header .pc ul .depth01 > a  {padding: 0 60px;}
+header .pc ul .depth02 {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+}
+header .pc ul .depth02 li {
+    line-height: 3.0;
+    font-size: 16px;
+}
+header .hd_bg {
+    width: 100%;
+    height: 250px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 100px; 
+    display: none;
+}
+.wrap {
+    height: 100vh;
+}
+.main_visual {height: calc(100% - 100px);}
+.main_visual video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .pc {display: none;}
+    .mobile {display: block;}
+    .nav {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        background-color: #000;
+        padding: 100px 15px;
+        box-sizing: border-box;
+        z-index: 10;
+        overflow-y: scroll;
+    }
+    .xi-close {position: absolute; right: 15px; font-size: 30px; top: 35px; z-index: 99;}
+    
+    .mobile .depth01 {
+        margin-bottom: 10px;
+    }
+    .mobile .depth01 > a{
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 50px; 
+    }
+    .mobile .depth02 {
+        background-color: teal;
+        border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+        display: none;
+    } 
+    .mobile .depth02 li {
+        line-height: 2.0;
+        font-size: 20px;
+    }
+    .mobile .depth01 > a.on {
+        color: teal;
+    }
+
+
+}

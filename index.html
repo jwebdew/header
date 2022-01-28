@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link href="lib/XEIcon-2.2.0/xeicon.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.pc .depth01').mouseenter(function(){
+                $('.depth02, .hd_bg').stop().slideDown();
+                // $('header').addClass('on');
+            });
+            $('.pc .depth01, .hd_bg').mouseleave(function(){
+                $('.depth02, .hd_bg').stop().slideUp();
+            });
+
+            $('.xi-bars').click(function(){
+                $('nav').css({
+                    'left' : '0'
+                });
+                $('.xi-bars').hide();
+            }); //햄버거 아이콘 클릭 시
+
+            $('.xi-close').click(function(){
+                $('nav').css({
+                    'left' : '-100%'
+                }); 
+                $('.xi-bars').show();
+            }); //햄버거 아이콘 클릭 시
+
+
+
+            //모바일 메뉴 = 아코디언메뉴 
+            $('.mobile .depth01 > a').click(function(){
+                if($(this).next().css('display') == 'none') {
+                    $('.mobile .depth02').slideUp();
+                    $(this).next().slideDown();
+                    $(this).addClass('on');
+                } else {
+                    $(this).next().slideUp();
+                    $('.mobile .depth01 > a').removeClass('on');
+                }
+
+            });//1차메뉴 클릭
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+    <header>
+        <div class="pc_header">
+            <h1>
+                <a href="#">
+                    <img src="img/logo.svg" alt="oska" />
+                </a>
+            </h1>
+            <nav class="pc">
+                <ul>
+                    <li class="depth01">
+                        <a href="#">company</a>
+                        <ul class="depth02">
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">브랜드 포인트</a></li>
+                        </ul>
+                    </li><!-- .depth01 end -->
+                    <li class="depth01">
+                        <a href="#">models</a>
+                        <ul class="depth02">
+                            <li><a href="#">파고라</a></li>
+                            <li><a href="#">파라솔</a></li>
+                            <li><a href="#">쉐이드</a></li>
+                            <li><a href="#">루프니처</a></li>
+                        </ul>
+                    </li><!-- .depth01 end -->
+                    <li class="depth01">
+                        <a href="#">projects</a>
+                        <ul class="depth02">
+                            <li><a href="#">국내</a></li>
+                            <li><a href="#">해외</a></li>
+                        </ul>
+                    </li><!-- .depth01 end -->
+                    <li class="depth01">
+                        <a href="#">contact</a>
+                        <ul class="depth02">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">견적상담</a></li>
+                            <li><a href="#">제휴 및 지원문의</a></li>
+                        </ul>
+                    </li><!-- .depth01 end -->
+                </ul>
+            </nav><!-- .pc end -->
+            <i class="mobile xi-bars"><span>메뉴보기</span></i>
+        </div><!-- .pc_header end -->
+        <nav class="mobile nav">
+            <i class="xi-close"><span>메뉴닫기</span></i>
+            <ul>
+                <li class="depth01">
+                    <a href="#">company</a>
+                    <ul class="depth02">
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">브랜드 포인트</a></li>
+                    </ul>
+                </li><!-- .depth01 end -->
+                <li class="depth01">
+                    <a href="#">models</a>
+                    <ul class="depth02">
+                        <li><a href="#">파고라</a></li>
+                        <li><a href="#">파라솔</a></li>
+                        <li><a href="#">쉐이드</a></li>
+                        <li><a href="#">루프니처</a></li>
+                    </ul>
+                </li><!-- .depth01 end -->
+                <li class="depth01">
+                    <a href="#">projects</a>
+                    <ul class="depth02">
+                        <li><a href="#">국내</a></li>
+                        <li><a href="#">해외</a></li>
+                    </ul>
+                </li><!-- .depth01 end -->
+                <li class="depth01">
+                    <a href="#">contact</a>
+                    <ul class="depth02">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">견적상담</a></li>
+                        <li><a href="#">제휴 및 지원문의</a></li>
+                    </ul>
+                </li><!-- .depth01 end -->
+            </ul>
+        </nav><!-- .mobile end -->
+        <div class="hd_bg"></div>
+    </header>
+    <div class="main_visual">
+        <video autoplay muted loop>
+            <source src="img/main-2.mp4">
+        </video>
+    </div>
+</div>
+
+</body>
+</html>
